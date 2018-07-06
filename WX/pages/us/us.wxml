@@ -1,0 +1,4 @@
+
+<scroll-view  style='text-align:center;' scroll-y='true' scroll-x='true'class="container" bindtouchmove="scroll"  bindtouchend='endTou'>
+  <image mode='scaleToFill' style="width: {{width}}px;height: {{height}}px;" bindtouchmove="" src="../images/about-us.jpg" ></image>
+</scroll-view>

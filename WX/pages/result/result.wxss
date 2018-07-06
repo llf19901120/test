@@ -1,0 +1,6 @@
+/* pages/result/result.wxss */
+@import "../caculator/caculator.wxss";
+
+.height40 {
+  height: 40rpx;
+}

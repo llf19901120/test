@@ -1,0 +1,13 @@
+<import src="cell.wxml" />  
+<view class="pages-container">  
+  <scroll-view scroll-y="true" class="pages-wrapper">  
+    <view wx:for="{{pageItems}}" wx:key="{{text}}">  
+      <view class="pages-row">  
+        <template is="cell" data="{{...item[0],cellHeight}}" />  
+        <template is="cell" data="{{...item[1],cellHeight}}" />  
+        <template is="cell" data="{{...item[2],cellHeight}}" />  
+      </view>  
+    </view>  
+  </scroll-view>  
+</view>
+<navigator></navigator>

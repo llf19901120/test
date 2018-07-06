@@ -1,0 +1,84 @@
+<view class="table">
+  <view class='tr {{show1 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show1">采购单价</text>
+    <input name="pur_perprice" value='{{param.pur_perprice}}' bindinput='bindPur_perprice' class="td border margin-right" type="digit"></input>
+    <label style='color:red;margin-left:-20rpx'>*</label>
+  </view>
+
+  <view class='tr {{show2 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show2">销售单价</text>
+    <input name="sale_perprice" value='{{param.sale_perprice}}' bindinput='bindSale_perprice' class="td border margin-right" type="digit"></input>
+    <label style='color:red;margin-left:-20rpx'>*</label>
+  </view>
+
+
+  <view class='tr {{show3 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show3">预付资金占用月数</text>
+    <input name="pre_fund_month" value='{{param.pre_fund_month}}' bindinput='bindPre_fund_month' class="td border margin-right" type="number"></input>
+    <label style='color:red;margin-left:-20rpx'>*</label>
+  </view>
+
+  <view class="tr border-bottom">
+    <text class="td">应收资金占用月数</text>
+    <input name="re_fund_month" value='{{param.re_fund_month}}' bindinput='bindRe_fund_month' class="td border margin-right" type="number"></input>
+    <label style='color:red;margin-left:-20rpx'>*</label>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show3}}'>
+    <text decode='true' space='true'>
+   采购单价×(资金月来源利率×开银承月数-开银承银行费率-开银承额度占用费率)
+    </text>
+  </view>
+
+  <view class="tr border-bottom">
+    <text class="td">运费</text>
+    <input name="freight_cost" value='{{param.freight_cost}}' bindinput='bindFreight_cost' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">分切费</text>
+    <input name="cut_cost" value='{{param.cut_cost}}' bindinput='bindCut_cost' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">开银承月数</text>
+    <picker bindchange='bindSelectBa1_month' value='{{param.selectIndex}}' range='{{param.ba1_month}}'>
+    <view style='width:310rpx'class="td border margin-right">
+      <text >{{param.ba1_month[param.selectIndex]}}</text>
+    </view>
+      <!-- <input name="ba1_month" bindinput='bindBa1_month' class="td border margin-right" type="number"></input> -->
+    </picker>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">收银承月数</text>
+    <input name="ba2_month" value='{{param.ba2_month}}' bindinput='bindBa2_month' class="td border margin-right" type="number"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">开银承银行费率</text>
+    <input name="ba1_rate" bindinput='bindBa1_rate' class="td border margin-right" type="digit" value='{{param.ba1_rate}}'></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">开银承额度占用费率</text>
+    <input name="ba1_limit_rate" value='{{param.ba1_limit_rate}}' bindinput='bindBa1_limit_rate' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">资金月占用利率</text>
+    <input disabled='true' name="fund_rate" value='{{param.fund_rate}}' bindinput='bindFund_rate' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">银承月占用利率</text>
+    <input disabled='true' name="ba_discount_rate" value='{{param.ba_discount_rate}}' bindinput='bindBa_discount_rate' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">资金月来源利率</text>
+    <input name="fund_rate_from" value='{{param.fund_rate_from}}' bindinput='bindFund_rate_from' class="td border margin-right" type="digit"></input>
+  </view>
+  <view class="tr border-bottom">
+    <text class="td">间接费用</text>
+    <input name="indirect_cost" value='{{param.indirect_cost}}' bindinput='bindIndirect_cost' class="td border margin-right" type="number"></input>
+  </view>
+  <!-- <view class="tr border-bottom">
+    <text class="td">利润(每吨收益)</text>
+    <input name="" bindinput='' class="td border margin-right" type="digit"></input>
+  </view> -->
+  <view class="tr">
+    <button bindtap="result" type="default" loading='{{onLoading}}'>开始计算</button>
+  </view>
+</view>

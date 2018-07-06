@@ -1,0 +1,85 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+/**index.wxss**/  
+.pages-container {  
+  height: 100%;  
+  display: flex;  
+  flex-direction: column;  
+  box-sizing: border-box;  
+  padding-top: 10rpx;  
+  padding-bottom: 10rpx;  
+}  
+.pages-title-bg {  
+  width: 100%;  
+}  
+.pages-wrapper {  
+}  
+.pages-row {  
+  width: 100%;  
+  display: flex;  
+  flex-direction: row;  
+  justify-content: space-around;  
+}  
+.pages-item {  
+  position: relative;  
+  padding: 10rpx;  
+  width: 33%;  
+  background-color: #fff;  
+  border: #ddd solid 1px;  
+}  
+.pages-icon-wrapper {  
+  display: flex;  
+  justify-content: space-around;  
+  align-items: center;  
+  margin: 10rpx;  
+  border-radius: 30%;  
+  height: 75%;  
+
+}  
+.pages-icon-wrapper-no-bg {  
+  display: flex;  
+  justify-content: space-around;  
+  align-items: center;  
+  margin: 10rpx;  
+  height: 75%;  
+}  
+.pages-icon {  
+  width: 200rpx;  
+  height: 200rpx;  
+}  
+.pages-text-wrapper {  
+  text-align: center;  
+}  
+.pages-text {  
+    
+}
+.navigator-hover {
+    color:blue;
+}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover {
+    color:red;
+}
+
+

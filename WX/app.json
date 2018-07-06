@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/result/result",
+    "pages/logs/logs",
+    "pages/caculator/caculator",
+    "pages/us/us"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "DEMO",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#ec7464",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_active.png"
+      },
+      {
+        "pagePath": "pages/us/us",
+        "text": "我们",
+        "iconPath": "pages/images/log.png",
+        "selectedIconPath": "pages/images/log_active.png"
+      }
+    ]
+  }
+}

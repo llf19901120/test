@@ -1,0 +1,93 @@
+<view class="table">
+  <view class='tr {{show1 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show1">资金占用费</text>
+    <text name="fund_cost" class="td border margin-right height40">{{fund_cost}}</text>
+    <!-- <image mode='widthFix' style="height:30rpx;width:30rpx;" src='../images/icon_question.png'></image> -->
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show1}}'>
+    <text decode='true' space='true'>
+(采购单价×资金月占用(来源)利率×预付资金占用月数)+(销售单价×资金月占用(来源)利率×应收资金占用月数);
+取资金月占用利率：预付资金占用月数>0，应收资金占用月数>0;
+取资金月来源利率：预付资金占用月数	&lt;=0，应收资金占用月数	&lt;=0;
+  </text>
+
+  </view>
+  <view class='tr {{show2 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show2">收银承贴现费用</text>
+    <text name="ba2_discount_cost" class="td border margin-right height40">{{ba2_discount_cost}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show2}}'>
+    <text decode='true' space='true'>
+    销售单价×银承月占用利率×收银承月数
+    </text>
+  </view>
+
+  <view class='tr {{show3 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show3">开银承节约利息</text>
+    <text name="ba1_save_interest" class="td border margin-right height40">{{ba1_save_interest}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show3}}'>
+    <text decode='true' space='true'>
+   采购单价×(资金月来源利率×开银承月数-开银承银行费率-开银承额度占用费率)
+    </text>
+  </view>
+
+  <view class='tr {{show4 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' class="td" data-show="show4">财务费用</text>
+    <text name="finance_cost" class="td border margin-right height40">{{finance_cost}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show4}}'>
+    <text decode='true' space='true'>
+   资金占用费+收银承贴现费用-开银承节约利息
+    </text>
+  </view>
+
+  <view class='tr {{show5 ? "" : "border-bottom"}}'>
+    <text bindtap="tapshow" data-show="show5" class="td">经营费用</text>
+    <text name="manage_cost" class="td border margin-right height40">{{manage_cost}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show5}}'>
+    <text decode='true' space='true'>
+  	运费×(1-7%)+分切费
+    </text>
+  </view>
+
+  <view class='tr {{show6 ? "" : "border-bottom"}}'>
+    <text bindtap="tapshow" data-show="show6" class="td">销售税金</text>
+    <text name="sale_tax" class="td border margin-right height40">{{sale_tax}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show6}}'>
+    <text decode='true' space='true'>
+  	(销售单价/1.16×0.16-(采购单价/1.16×0.16+运费×0.07))×0.12
+    </text>
+  </view>
+
+  <view class='tr {{show7 ? "" : "border-bottom"}}'>
+    <text bindtap="tapshow" data-show="show7" class="td">其他税金</text>
+    <text name="other_tax" class="td border margin-right height40">{{other_tax}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show7}}'>
+    <text decode='true' space='true'>
+  	销售单价/1.16×0.001
+    </text>
+  </view>
+
+  <view class='tr {{show8 ? "" : "border-bottom"}}'>
+    <text bindtap="tapshow" data-show="show8" class="td">利润(每吨收益)</text>
+    <text name="per_profit1" class="td border margin-right height40">{{per_profit1}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show8}}'>
+    <text decode='true' space='true'>
+销售单价/1.16-(采购单价/1.16+财务费用+经营费用+销售税金+其他税金)-间接费用
+    </text>
+  </view>
+  <view class='tr {{show9 ? "" : "border-bottom"}}'>
+    <text bindtap='tapshow' data-show="show9" class="td">利润率(%)</text>
+    <text name="per_profit_rate" class="td border margin-right height40">{{per_profit_rate}}</text>
+  </view>
+  <view style="margin-top:-40rpx" class="border-bottom" wx:if='{{show9}}'>
+    <text decode='true' space='true'>
+利润(每吨收益)*1.16/销售单价
+    </text>
+  </view>
+</view>
